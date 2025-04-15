@@ -1,0 +1,177 @@
+/* users.css */
+.users-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+/* Table Title */
+.table-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Table Wrapper for Responsive Scroll */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Table Styling */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px; /* Prevents squeezing in small screens */
+}
+
+/* Table Head & Body Styling */
+.user-table th,
+.user-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+/* Header Styling */
+.user-table th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Row Styling */
+.user-table td {
+    background-color: #fff;
+    color: #333;
+}
+
+.user-table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.user-table tr:hover {
+    background-color: #e2e2e2;
+}
+
+/* Verification Styling */
+.verified {
+    color: green;
+    font-weight: bold;
+}
+
+.not-verified {
+    color: red;
+    font-weight: bold;
+}
+
+/* Role Color */
+td.admin {
+    color: #0e0ee5;
+}
+
+/* Delete Button */
+.delete-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #cc0000;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .users-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .table-title {
+        font-size: 1.5rem;
+    }
+
+    .table-wrapper {
+        overflow-x: auto; /* Enables horizontal scroll */
+    }
+
+    .user-table {
+        min-width: 600px; /* Prevents excessive shrinkage */
+    }
+
+    .user-table th,
+    .user-table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .delete-button {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 480px) {
+    .table-title {
+        font-size: 1.3rem;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+    }
+
+    .user-table {
+        display: block;
+        overflow-x: auto;
+        min-width: 100%;
+    }
+
+    .user-table thead {
+        display: none;
+    }
+
+    .user-table tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        background: #fff;
+        padding: 10px;
+    }
+
+    .user-table td {
+        display: block;
+        text-align: right;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+        padding: 10px;
+    }
+
+    .user-table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+        text-align: left;
+        color: #007bff;
+    }
+
+    .delete-button {
+        padding: 5px 8px;
+        font-size: 0.8rem;
+    }
+}
