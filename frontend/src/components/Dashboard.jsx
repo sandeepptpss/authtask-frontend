@@ -59,7 +59,7 @@ const Dashboard = () => {
       try {
         const token = localStorage.getItem("token");
         if (!token) return;
-        const response = await fetch("http://localhost:8002/api/profile", {
+         const response = await fetch("http://localhost:8002/api/view-user-profile", {
           method: "GET",
           headers: { "Authorization": token, "Content-Type": "application/json" },
         })
@@ -98,15 +98,16 @@ const Dashboard = () => {
             alt="notifications"
           />
           <div className="user-profile">
-            <img 
-              src={user?.profile 
-                ? `http://localhost:8002/${user.profile}`
-                : "https://via.placeholder.com/120"
-              }
-              className="dpicn"
-              alt="profile"
-              onClick={toggleDropdown}
-            />
+                    <img 
+            src={user?.profile 
+              ? `http://localhost:8002/${user.profile}`
+              : "http://localhost:8002/uploads/images/Signup-1741170871891.png"}
+            className="dpicn-icon"
+            width='50px'
+            height='50px'
+            alt="profile"
+            onClick={toggleDropdown}
+          />
             {showDropdown && (
               <div className="dropdown-menu">
                 <p onClick={() => handleProfileOption('view-profile')}>

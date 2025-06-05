@@ -1,177 +1,249 @@
-/* users.css */
 .users-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
     overflow-x: auto;
 }
 
-/* Table Title */
 .table-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
-/* Table Wrapper for Responsive Scroll */
 .table-wrapper {
-    width: 100%;
     overflow-x: auto;
 }
 
-/* Table Styling */
 .user-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 700px; /* Prevents squeezing in small screens */
+    min-width: 800px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background-color: white;
 }
 
-/* Table Head & Body Styling */
 .user-table th,
 .user-table td {
-    padding: 12px;
-    text-align: center;
-    border: 1px solid #ddd;
-    font-size: 1rem;
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-/* Header Styling */
 .user-table th {
-    background-color: #007bff;
-    color: #fff;
-    font-weight: 600;
-}
-
-/* Row Styling */
-.user-table td {
-    background-color: #fff;
-    color: #333;
-}
-
-.user-table tr:nth-child(even) {
     background-color: #f4f4f4;
 }
 
-.user-table tr:hover {
-    background-color: #e2e2e2;
+.clickable-name {
+    color: #007BFF;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-/* Verification Styling */
+.clickable-name:hover {
+    text-decoration: underline;
+}
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.status-badge {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    display: inline-block;
+}
+
 .verified {
-    color: green;
-    font-weight: bold;
+    background-color: #d4edda;
+    color: #155724;
 }
 
 .not-verified {
-    color: red;
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.admin-role {
     font-weight: bold;
+    color: #dc3545;
 }
 
-/* Role Color */
-td.admin {
-    color: #0e0ee5;
-}
-
-/* Delete Button */
-.delete-button {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 8px 12px;
+.icon-button.delete {
     cursor: pointer;
-    border-radius: 4px;
-    transition: background 0.3s ease;
+    color: red;
+    font-size: 18px;
+}
+td.user-gender {
+    text-transform: capitalize;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
 }
 
-.delete-button:hover {
-    background-color: #cc0000;
+.modal {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px 25px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.3s ease-in-out;
 }
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-    .users-container {
-        width: 95%;
-        padding: 15px;
-    }
+.modal h3 {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+}
 
-    .table-title {
-        font-size: 1.5rem;
-    }
+.modal label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: #444;
+}
 
-    .table-wrapper {
-        overflow-x: auto; /* Enables horizontal scroll */
-    }
+.modal input[type="text"],
+.modal input[type="email"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    margin-top: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease-in-out;
+}
 
-    .user-table {
-        min-width: 600px; /* Prevents excessive shrinkage */
-    }
+.modal input:focus {
+    border-color: #007bff;
+    outline: none;
+}
 
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-actions button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal-actions button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.modal-actions button[type="button"] {
+    background-color: #ccc;
+    color: #333;
+}
+
+.modal-actions button[type="button"]:hover {
+    background-color: #bbb;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal label {
+    display: block;
+    margin: 10px 0;
+}
+
+.modal input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.icon-button.edit {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.action-icons {
+    display: flex;
+    gap: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 768px) {
     .user-table th,
     .user-table td {
-        padding: 10px;
-        font-size: 0.9rem;
+        padding: 8px;
+        font-size: 14px;
     }
 
-    .delete-button {
-        padding: 6px 10px;
-        font-size: 0.85rem;
-    }
-}
-
-/* Mobile View */
-@media (max-width: 480px) {
     .table-title {
-        font-size: 1.3rem;
+        font-size: 20px;
+        text-align: center;
     }
 
-    .table-wrapper {
-        overflow-x: auto;
-    }
-
-    .user-table {
-        display: block;
-        overflow-x: auto;
-        min-width: 100%;
-    }
-
-    .user-table thead {
-        display: none;
-    }
-
-    .user-table tr {
-        display: block;
-        margin-bottom: 15px;
-        border: 1px solid #ddd;
-        background: #fff;
-        padding: 10px;
-    }
-
-    .user-table td {
-        display: block;
-        text-align: right;
-        font-size: 0.9rem;
-        border-bottom: 1px solid #ddd;
-        position: relative;
-        padding: 10px;
-    }
-
-    .user-table td:before {
-        content: attr(data-label);
-        position: absolute;
-        left: 10px;
-        font-weight: bold;
-        text-align: left;
-        color: #007bff;
-    }
-
-    .delete-button {
-        padding: 5px 8px;
-        font-size: 0.8rem;
+    .profile-image {
+        width: 30px;
+        height: 30px;
     }
 }

@@ -6,7 +6,6 @@ const UserProfile = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
@@ -27,7 +26,7 @@ const UserProfile = () => {
           throw new Error(errorData.message || "Failed to fetch profile");
         }
 
-        const data = await response.json();
+      const data = await response.json();
         setUser(data);
       } catch (err) {
         setError(err.message);
@@ -54,7 +53,7 @@ const UserProfile = () => {
           />
           <p><strong>Name:</strong> {user.name}</p>
           <p><strong>Email:</strong> {user.email}</p>
-          <p><strong>Username:</strong> {user.username}</p>
+          <p><strong>Username:</strong>{user.username}</p>
           <p><strong>Gender:</strong> {user.gender || "Not specified"}</p>
         </div>
       ) : (

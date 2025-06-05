@@ -18,7 +18,7 @@ const Nav = ()=>{
       </div>
       {auth? (
         <ul className={`menu-items ${isMenuOpen ? "open" : ""}`}>
-            <li onClick={toggleMenu}>
+          <li onClick={toggleMenu}>
             <Link to="/">Home</Link>
           </li>
           <li onClick={toggleMenu}>
